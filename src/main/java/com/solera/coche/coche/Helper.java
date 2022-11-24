@@ -1,11 +1,13 @@
 package com.solera.coche.coche;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 public class Helper {
 	
 	public static int x = 0;
 	public static int y = 0;
 	public static int vidas = 10;
-	
+
 	public static int[][] fillMatriz( int row) {
 		int[][] matriz = new int[row][row];
 		for(int i = 0; i<row;i++) {
@@ -17,40 +19,53 @@ public class Helper {
 	}
 	
 	public static int[][] fillObstacles(int[][] matriz) {
-		for(int i = 0;i<5;i++) {
-			matriz[(int) (Math.random()*8)][(int) (Math.random()*8)] = 1;
-			matriz[(int) (Math.random()*8)][(int) (Math.random()*8)] = 2;
-		}
+        for (int i = 0; i < 5; i++) {
+            matriz[(int) (Math.random()*8)][(int) (Math.random()*8)] = 2;
+        }
+        for(int i = 0;i<10;i++) {
+            matriz[(int) (Math.random()*8)][(int) (Math.random()*8)] = 1;
+        }
 		matriz[0][0] = 0;
 		return matriz;
 	}
-	
-	public static void move(String w) {
+
+    //Modificar para que sea GET
+	public static int[] move(String w) {
+        int[] array = new int[2];
         switch (w) {
             case "w":
                 if(x > 0) x--;
                 else x = 7;
-                break;
+                array[0] = x;
+                array[1] = y;
+                return array;
             case "s":
                 if (x < 7)x++;
                 else x = 0;
-                break;
+                array[0] = x;
+                array[1] = y;
+                return array;
             case "d":
                 if (y < 7) y++;
                 else y = 0;
-                break;
+                array[0] = x;
+                array[1] = y;
+                return array;
             case "a":
                 if (y > 0)y--;
                 else y = 7;
-                break;
+                array[0] = x;
+                array[1] = y;
+                return array;
 
             default:
-                System.out.println("Mal movimiento");
+                return array;
+
         }
 
     }
 
-
+    //Modificar para que sea GET
     public static int[] mostrarCercanos(int num1, int num2, int[][] matriz){
         int[] array = new int[4];
 

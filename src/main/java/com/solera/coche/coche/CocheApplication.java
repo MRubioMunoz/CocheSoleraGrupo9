@@ -20,6 +20,13 @@ public class CocheApplication {
 		
 		int[][] matriz = Helper.fillMatriz(8);
 		matriz = Helper.fillObstacles(matriz);
+
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				System.out.print(matriz[i][j]);
+			}
+			System.out.println();
+		}
 		
 		for(int i = 0; i < 100; i++) {
 			System.out.println("nuevo movimiento");
@@ -40,7 +47,7 @@ public class CocheApplication {
 			for (int j = 0; j < cercanos.length; j++) {
 				System.out.print(cercanos[j]);
 			}
-			System.out.println("   " + Helper.x + "/" + Helper.y);
+//			System.out.println("   " + Helper.x + "/" + Helper.y);
 		}
 		sc.close();
 	}
