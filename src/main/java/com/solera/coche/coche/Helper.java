@@ -83,5 +83,21 @@ public class Helper {
 
         return array;
     }
+    
+    // Get de las vidas
+    public static int valorarPosicion(int[][] matriz) {
+    	if(matriz[x][y] == 2){
+			System.out.println("El coche cayo por un barranco y haz perdido todas tus vidas. GAME OVER");
+			vidas = 0;
+		}
+		if(matriz[x][y] == 1){
+			--Helper.vidas;
+			System.out.println("El coche entro en barro por lo tanto pierdes una vida. Te quedan: " + vidas);			
+			System.out.println("Debera moverse de sitio para salir de aqui");
+			//i--; 
+			matriz[x][y] = 2;
+		}
+		return vidas;
+    }
 }
 
