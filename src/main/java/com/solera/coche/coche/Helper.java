@@ -2,13 +2,15 @@ package com.solera.coche.coche;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
+@Deprecated
 public class Helper {
+	
 	
 	public static int x = 0;
 	public static int y = 0;
 	public static int vidas = 10;
 
-	public static int[][] fillMatriz( int row) {
+	public static int[][] fillMatriz(int row) {
 		int[][] matriz = new int[row][row];
 		for(int i = 0; i<row;i++) {
 			for(int j = 0; j<row;j++) {
