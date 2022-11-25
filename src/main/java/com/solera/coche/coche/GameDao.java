@@ -59,7 +59,7 @@ public class GameDao {
 			coche.setVidas(0);
 		}
 		if(matriz[coche.getX()][coche.getY()] == 1){
-			coche.setVidas(coche.getVidas() - 1);;
+			coche.setVidas(coche.getVidas() - 1);
 			System.out.println("El coche entro en barro por lo tanto pierdes una vida. Te quedan: " + coche.getVidas());			
 			System.out.println("Debera moverse de sitio para salir de aqui");
 			//i--; 
