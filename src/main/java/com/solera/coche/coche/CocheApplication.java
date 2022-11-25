@@ -24,7 +24,7 @@ public class CocheApplication {
 				System.out.print(cercanos[j]);
 			}
 			
-		}while(turnos <100 && service.startCoche().getVidas() > 0);
+		}while(turnos <100 || service.startCoche().getVidas() >= 0);
 		sc.close();
 	}
 
