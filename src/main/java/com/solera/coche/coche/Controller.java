@@ -22,6 +22,9 @@ public class Controller {
 		return service.startCoche();
 	}
 	
-	
+	@GetMapping("/cercanos")
+	public Integer[] getCercanos() {
+		return service.mostrarCercanos(service.startMatriz().getMatriz());
+	}
 
 }

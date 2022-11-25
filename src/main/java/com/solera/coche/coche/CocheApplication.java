@@ -25,7 +25,7 @@ public class CocheApplication {
 			String move = sc.nextLine();
 			service.move(move);
 			service.valorarPosicion(service.startMatriz().getMatriz());
-			int[] cercanos = service.mostrarCercanos(service.startMatriz().getMatriz());
+			Integer[] cercanos = service.mostrarCercanos(service.startMatriz().getMatriz());
 			for (int j = 0; j < cercanos.length; j++) {
 				System.out.println(posiciones[j] + cercanos[j]);
 			}
@@ -33,7 +33,6 @@ public class CocheApplication {
 
 			
 		}while(turnos < 100 && !(service.startCoche().getVidas() == 0));
-		//System.out.println("IEEE");
 		sc.close();
 		System.exit(0);
 		

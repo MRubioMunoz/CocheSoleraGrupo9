@@ -68,8 +68,8 @@ public class GameDao {
 		return coche.getVidas();
     }
 	
-	public int[] mostrarCercanos(Integer[][] matriz){
-        int[] array = new int[4];
+	public Integer[] mostrarCercanos(Integer[][] matriz){
+		Integer[] array = new Integer[4];
 
         if (coche.getX() > 0) array[0] = matriz[coche.getX() - 1][coche.getY()];
         else array[0] = matriz[7][coche.getY()];
