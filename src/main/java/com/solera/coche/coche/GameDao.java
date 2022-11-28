@@ -85,4 +85,27 @@ public class GameDao {
 
         return array;
     }
+	
+	public int move100Turns() {
+		int turns = 0;
+		String[] moves = new String[4];
+		moves[0] = "w";
+		moves[1] = "d";
+		moves[2] = "s";
+		moves[3] = "a";
+		String moveCorrect = "";
+		while(turns < 100) {
+		valorarPosicion(startMatriz().getMatriz());
+		Integer[] cercanos = mostrarCercanos(startMatriz().getMatriz());
+		for (int i = 0; i <= 3; i++) {
+			if(cercanos[i] != 2) {
+				moveCorrect = moves[i]; 
+				break;
+			}
+		}
+		turns++;
+		move(moveCorrect);
+		}
+		return turns;
+	}
 }

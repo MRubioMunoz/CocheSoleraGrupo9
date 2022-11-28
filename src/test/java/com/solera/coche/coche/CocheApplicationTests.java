@@ -1,5 +1,7 @@
 package com.solera.coche.coche;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -8,10 +10,13 @@ class CocheApplicationTests {
 	
 	
 	
-
 	@Test
-	void contextLoads() {
+	void pasar_juego() {
 		
+		GameDao service = new GameDao();
+		int turns = service.move100Turns();
+		
+		assertEquals(turns, 100);
 		
 	}
 
